@@ -10,12 +10,12 @@
   </aside>
   </aside>
   <div class="span8">
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+    <% if @user.events.any? %>
+      <h3>Events (<%= @user.events.count %>)</h3>
       <ol class="microposts">
-        <%= render @microposts %>
+        <%= render @events %>
       </ol>
-      <%= will_paginate @microposts %>
+      <%= will_paginate @events %>
     <% end %>
   </div>
 
