@@ -8,6 +8,8 @@ Dt265Project::Application.routes.draw do
   resources :microposts, only: [:create, :destroy]
 
   match '/register_event',    to: 'events#new'
+ # match '/update_event',    to: 'events#edit'
+
 
   match '/signup',    to: 'users#new'
   match '/signin',    to: 'sessions#new'
