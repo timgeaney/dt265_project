@@ -1,0 +1,39 @@
+
+<% provide(:title, 'Register Events') %>
+<h1>Register Your Event</h1>
+<p>Find me in app/views/events/new.html.erb</p>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@event) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+
+      <%= f.label :event_date %>
+      <%= f.text_field :event_date %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description%>
+
+      <%= f.label :contact_phone %>
+      <%= f.text_field :contact_phone %>
+
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+
+      <%= f.label :country %>
+      <%= f.text_field :country %>
+
+      <%= f.label :latitude %>
+      <%= f.text_field :longitude %>
+      
+
+      <%= f.submit "Upload Event", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

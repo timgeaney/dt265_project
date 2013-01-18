@@ -1,15 +1,20 @@
 Dt265Project::Application.routes.draw do
+  
+  root to: 'static_pages#home'
+
+  resources :events
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
 
+  match '/register_event',    to: 'events#new'
 
   match '/signup',    to: 'users#new'
   match '/signin',    to: 'sessions#new'
   match '/signout',    to: 'sessions#destroy', via: :delete
 
 
-  root to: 'static_pages#home'
+  
   
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
