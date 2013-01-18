@@ -8,7 +8,7 @@ namespace :db do
                  password_confirmation: "foobar")
     admin.toggle!(:admin)
     #create 99 users
-    99.times do |n|
+    50.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@dt265project.org"
       password  = "password"
@@ -26,7 +26,7 @@ namespace :db do
     end
 
      #create 100 number events
-     100.times do |e|
+     50.times do |e|
        title = ["Whats on in the cinema", "Leinster V's Munster", "Formula 1", "Tommy Tiernan", "the Rolling stones", "Meath V's Dublin", "Caravagio at Art Museum", "Debussy at National Concert Hall"].sample
        category = ["sport", "cinema", "drama", "comedy", "art", "music"].sample
       location = ["london", "cork", "dublin", "amsterdam"].sample
