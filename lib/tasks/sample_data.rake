@@ -25,13 +25,15 @@ namespace :db do
         users.each {|user| user.microposts.create!(content: content)}
     end
 
-    # #create 100 number events
-    # 100.times do |e|
-    #   title = Faker::Name.name
-    #   category = [:sport, :cinema, :drama, :comedy, :art, :music].sample
-    #   event_date
-    #   description
-      
+     #create 100 number events
+     100.times do |e|
+       title = ["Whats on in the cinema", "Leinster V's Munster", "Formula 1", "Tommy Tiernan", "the Rolling stones", "Meath V's Dublin", "Caravagio at Art Museum", "Debussy at National Concert Hall"].sample
+       category = ["sport", "cinema", "drama", "comedy", "art", "music"].sample
+      location = ["london", "cork", "dublin", "amsterdam"].sample
+      Event.create!(title: title,
+                   category: category,
+                   location: location,)
+    end
 
 
 

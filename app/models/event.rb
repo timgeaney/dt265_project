@@ -12,4 +12,8 @@
 
 class Event < ActiveRecord::Base
   attr_accessible :category, :location, :title
+
+  validates :title, presence: true, length: { maximum: 50}
+  validates :category, presence: true, length: { maximum: 50}
+  validates :location, presence: true, length: { maximum: 50}
 end
