@@ -7,7 +7,7 @@ namespace :db do
                  password: "foobar",
                  password_confirmation: "foobar")
     admin.toggle!(:admin)
-    #create 99 users
+    #create 50 users
     50.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@dt265project.org"
@@ -30,9 +30,9 @@ namespace :db do
        title = ["Whats on in the cinema", "Leinster V's Munster", "Formula 1", "Tommy Tiernan", "the Rolling stones", "Meath V's Dublin", "Caravagio at Art Museum", "Debussy at National Concert Hall"].sample
        category = ["sport", "cinema", "drama", "comedy", "art", "music"].sample
       location = ["london", "cork", "dublin", "amsterdam"].sample
-      Event.create!(title: title,
+      users.each { |user| user.events.create!(title: title,
                    category: category,
-                   location: location,)
+                   location: location,)}
     end
 
 

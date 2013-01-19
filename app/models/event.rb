@@ -12,7 +12,7 @@
 
 class Event < ActiveRecord::Base
   attr_accessible :category, :location, :title, :date
-  has_and_belongs_to_many :users
+  belongs_to :user
 
   validates :title, presence: true, length: { maximum: 50}
   validates :category, presence: true, length: { maximum: 50}
