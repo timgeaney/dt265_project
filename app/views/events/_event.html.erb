@@ -1,5 +1,8 @@
 <li>
-  
-  <%= link_to event.title, event %>  
- 
+  <span class="content"><%= link_to event.title, event %></span>
+  <span class="content"><%= event.category %></span>
+
+  <span class="timestamp">
+    Added <%= time_ago_in_words(event.created_at) %> ago.
+  </span>
 </li>

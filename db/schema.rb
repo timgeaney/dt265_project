@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130118233719) do
+ActiveRecord::Schema.define(:version => 20130119134139) do
 
   create_table "events", :force => true do |t|
     t.string   "category"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20130118233719) do
   end
 
   add_index "events", ["created_at"], :name => "index_events_on_user_id_and_created_at"
+  add_index "events", ["user_id"], :name => "index_events_on_user_id"
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
