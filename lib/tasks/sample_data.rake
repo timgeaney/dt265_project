@@ -27,8 +27,10 @@ namespace :db do
 
      #create 10 number events
      20.times do 
-       title = ["Whats on in the cinema", "Leinster V's Munster", "Formula 1", "Tommy Tiernan", "the Rolling stones", "Meath V's Dublin", "Caravagio at Art Museum", "Debussy at National Concert Hall"].sample
-       category = ["sport", "cinema", "drama", "comedy", "art", "music"].sample
+       title = ["Whats on in the cinema", "Leinster V's Munster", "Formula 1", "Tommy Tiernan", 
+        "the Rolling stones", "Meath V's Dublin", "Caravagio at Art Museum", 
+        "Debussy at National Concert Hall", "The Sopranoes"].sample
+      category = ["sport", "cinema", "drama", "comedy", "art", "music", "Tv"].sample
       location = ["london", "cork", "dublin", "amsterdam"].sample
       users.each { |user| user.events.create!(title: title,
                    category: category,

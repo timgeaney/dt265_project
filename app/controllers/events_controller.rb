@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_filter :signed_in_user, only: [:create, :destroy]
+  before_filter :correct_user,   only: :destroy
   
   def index
     @events = Event.paginate(page: params[:page])
@@ -9,10 +11,14 @@ class EventsController < ApplicationController
   end
   
    def create
-   	@event = Event.new(params[:event])
-   	@event.save
-   	flash[:notice] = "Event has been created"
-   	redirect_to @event
+   	@event = current_user.events.build(params[:event])
+   	if @event.save
+   	  flash[:notice] = "Event has been created"
+   	  redirect_to root_url
+    else
+      @feed_items = []
+      render 'static_pages/home'
+    end
 
    end
 
@@ -38,8 +44,15 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
     flash[:notice] = "Event has been deleted."
-    redirect_to @event
+    redirect_to root_url
   end
+
+      private
+
+    def correct_user
+      @event = current_user.events.find_by_id(params[:id])
+      redirect_to root_url if @event.nil?
+    end
 
  
 
