@@ -30,12 +30,23 @@ namespace :db do
        title = ["Whats on in the cinema", "Leinster V's Munster", "Formula 1", "Tommy Tiernan", 
         "the Rolling stones", "Meath V's Dublin", "Caravagio at Art Museum", 
         "Debussy at National Concert Hall", "The Sopranoes"].sample
-      category = ["sport", "cinema", "drama", "comedy", "art", "music", "Tv"].sample
+      date = []
+      description = Faker::Lorem.sentence(5)
+      contact_phone = []
+      address = []
+      country = []
+      latitude = []
+      longitude = []
       location = ["london", "cork", "dublin", "amsterdam"].sample
       users.each { |user| user.events.create!(title: title,
                    category: category,
                    location: location,)}
     end
+
+    #create categories
+    category = ["sport", "cinema", "drama", "comedy", "art", "music", "Tv", "Science"]
+    category.each {|category| Category.create(name: category)}
+
 
 
 

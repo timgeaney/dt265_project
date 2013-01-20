@@ -7,6 +7,6 @@ class EventUser < ActiveRecord::Base
   validates :attendee_id, presence: true
   validates :host_id, presence: true
 
-
+  default_scope order: 'events.date DESC'
 
 end

@@ -4,7 +4,7 @@ Dt265Project::Application.routes.draw do
 
   resources :events
   resources :users
-  #resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
 
    match '/register_event',    to: 'events#new'
