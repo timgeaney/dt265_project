@@ -8,7 +8,7 @@ namespace :db do
                  password_confirmation: "foobar")
     admin.toggle!(:admin)
     #create 35 users
-    35.times do |n|
+    10.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@dt265project.org"
       password  = "password"
@@ -19,14 +19,14 @@ namespace :db do
     end
     #create 35 microposts for each user
 
-      users = User.all(limit: 35)
-      35.times do
+      users = User.all(limit: 10)
+      10.times do
         content = Faker::Lorem.sentence(5)
         users.each {|user| user.microposts.create!(content: content)}
     end
 
      #create 10 number events
-     20.times do 
+     10.times do 
        title = ["Whats on in the cinema", "Leinster V's Munster", "Formula 1", "Tommy Tiernan", 
         "the Rolling stones", "Meath V's Dublin", "Caravagio at Art Museum", 
         "Debussy at National Concert Hall", "The Sopranoes"].sample
