@@ -11,16 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130119134139) do
+ActiveRecord::Schema.define(:version => 20130120192254) do
+
+  create_table "event_users", :force => true do |t|
+    t.integer  "attendee_id"
+    t.integer  "host_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "event_users", ["attendee_id", "host_id"], :name => "index_event_users_on_attendee_id_and_host_id", :unique => true
+  add_index "event_users", ["attendee_id"], :name => "index_event_users_on_attendee_id"
+  add_index "event_users", ["host_id"], :name => "index_event_users_on_host_id"
 
   create_table "events", :force => true do |t|
-    t.string   "category"
     t.string   "location"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.string   "title"
     t.date     "date"
     t.integer  "user_id"
+    t.string   "description"
+    t.string   "contact_phone"
+    t.string   "address"
+    t.string   "country"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "url"
   end
 
   add_index "events", ["created_at"], :name => "index_events_on_user_id_and_created_at"

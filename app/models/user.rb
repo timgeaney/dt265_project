@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :microposts, dependent: :destroy
   has_many :events
+  has_many :event_users, foreign_key: "attendee_id", dependent: :destroy
+  has_many :host_users, through: :relationships, source: :host
+
+
 
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
@@ -32,8 +36,8 @@ class User < ActiveRecord::Base
     Event.where("user_id = ?", id)
   end
 	  
-
-
+  
+  
     private
 
 	    def create_remember_token
