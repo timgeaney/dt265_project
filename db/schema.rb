@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130120220540) do
+ActiveRecord::Schema.define(:version => 20130120230836) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -25,17 +25,6 @@ ActiveRecord::Schema.define(:version => 20130120220540) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
-
-  create_table "event_users", :force => true do |t|
-    t.integer  "attendee_id"
-    t.integer  "host_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "event_users", ["attendee_id", "host_id"], :name => "index_event_users_on_attendee_id_and_host_id", :unique => true
-  add_index "event_users", ["attendee_id"], :name => "index_event_users_on_attendee_id"
-  add_index "event_users", ["host_id"], :name => "index_event_users_on_host_id"
 
   create_table "events", :force => true do |t|
     t.datetime "created_at",    :null => false
@@ -63,6 +52,14 @@ ActiveRecord::Schema.define(:version => 20130120220540) do
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
+
+  create_table "registrations", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.string   "note"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

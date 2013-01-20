@@ -13,6 +13,8 @@
 class Event < ActiveRecord::Base
   attr_accessible :title, :date, :description, :contact_phone,  :address, :country, :latitude, :longitude, :url
   belongs_to :user
+  has_many :registrations
+  has_many :attendees, :through => :registrations, source => :user
   has_and_belongs_to_many :categories
   has_many :event_users, foreign_key: "attendee_id", dependent: :destroy
 
