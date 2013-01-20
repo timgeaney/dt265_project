@@ -14,10 +14,10 @@ class EventsController < ApplicationController
    	@event = current_user.events.build(params[:event])
    	if @event.save
    	  flash[:notice] = "Event has been created"
-   	  redirect_to root_url
+   	  redirect_to @event
     else
       @feed_items = []
-      render 'static_pages/home'
+      render 'new'
     end
 
    end
