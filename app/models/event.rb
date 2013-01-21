@@ -26,9 +26,9 @@ class Event < ActiveRecord::Base
   validates :contact_phone, presence: true
   validates :address, presence: true, length: { maximum: 50}
   validates :country, presence: true, length: { maximum: 50}
-  validates :latitude, presence: true 
-  validates :longitude, presence: true
-  validates :url, presence: true
+  #validates :latitude, presence: true 
+  #validates :longitude, presence: true
+  #validates :url, presence: true
   
 
 

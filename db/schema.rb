@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130120233742) do
+ActiveRecord::Schema.define(:version => 20130121182124) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(:version => 20130120233742) do
     t.datetime "updated_at",    :null => false
     t.string   "title"
     t.date     "date"
-    t.integer  "user_id"
     t.string   "description"
     t.string   "contact_phone"
     t.string   "address"
@@ -39,10 +38,10 @@ ActiveRecord::Schema.define(:version => 20130120233742) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "url"
+    t.integer  "user_id"
   end
 
   add_index "events", ["created_at"], :name => "index_events_on_user_id_and_created_at"
-  add_index "events", ["user_id"], :name => "index_events_on_user_id"
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
@@ -54,8 +53,8 @@ ActiveRecord::Schema.define(:version => 20130120233742) do
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
 
   create_table "registrations", :force => true do |t|
-    t.integer  "user_id"
     t.integer  "event_id"
+    t.integer  "user_id"
     t.string   "note"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
