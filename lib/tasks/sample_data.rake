@@ -8,7 +8,7 @@ namespace :db do
                  password_confirmation: "foobar")
     admin.toggle!(:admin)
     #create 35 users
-    10.times do |n|
+    35.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@dt265project.org"
       password  = "password"
@@ -26,7 +26,7 @@ namespace :db do
     end
 
      #create 10 number events
-     10.times do 
+     35.times do 
        title = ["Whats on in the cinema", "Leinster V's Munster", "Formula 1", "Tommy Tiernan", 
         "the Rolling stones", "Meath V's Dublin", "Caravagio at Art Museum", 
         "Debussy at National Concert Hall", "The Sopranoes"].sample
@@ -35,6 +35,7 @@ namespace :db do
       contact_phone = ["555-555-555"]
       address = ["dublin", "cork", "london", "paris", "berlin", "amsterdam"].sample
       country = ["ireland", "england", "wales", "france", "holland"].sample
+      url = ["www.google.com"]
       
       location = ["london", "cork", "dublin", "amsterdam"].sample
       users.each { |user| user.events.create!(title: title,
@@ -43,6 +44,7 @@ namespace :db do
                    contact_phone: contact_phone,
                    address: address,
                    country: country,
+                   url: url
                    
                    )}
     end
