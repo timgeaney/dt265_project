@@ -21,7 +21,7 @@ class Event < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 50}
-  validates :date, presence: true
+  #validates :date, presence: true
   validates :description, presence: true, length: { maximum: 140}
   validates :contact_phone, presence: true
   validates :address, presence: true, length: { maximum: 50}
