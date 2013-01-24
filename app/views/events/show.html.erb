@@ -1,17 +1,17 @@
 <% provide(:title, @event.title) %>
-<div class="row">
+<!-- <div class="row">
 
     <div>
       <h1>
         <%= @event.title %>
       </h1>
-    </div>
+    </div> -->
 
 
-  <div class="container-fluid">
-    <ul class = "inline">
+  <div id="overlay">
+    <ul class = "row">
     <p>
-        <h2>
+        <h3>
           <li>Date: <%= @event.date %></li>
           <li>Description: <%= @event.description %></li>
           <li>Contact Phone: <%= @event.contact_phone %></li>
@@ -20,15 +20,24 @@
           <li>Latitude: <%= @event.latitude %></li>
           <li>Longitude: <%= @event.longitude %></li>
           <li>Website: <%= link_to @event.url %></li>
-        </h2>
+        </h3>
       </p>
 
      </ul>
-  </div>
-  <body>
-  <div id="googleMap" style="width:600px;height:480px;"></div>
+  </div> 
 
-  </body>
+ 
+    <div id="holder">
+<a href="#" id="zi">Zoom In</a>
+<a href="#" id="zo">Zoom Out</a>
+<a href="#" id="gt">GoTo</a>
+</div>
+ 
+<!--Google Maps APIv3 Background-->
+<div id="canvas_holder">
+<div id="map_canvas"></div>
+</div><!-- End Google Maps Background -->
+
   <p>
      <%= link_to "Update", edit_event_path(@event) %>
      <%= link_to "Delete", @event, :method => :delete, :confirm => "Are you sure you want to delete this event?" %>

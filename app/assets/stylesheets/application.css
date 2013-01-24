@@ -11,3 +11,63 @@
  *= require_self
  *= require_tree .
  */
+html,body {width:100%;height:100%;margin:0;padding:0;}
+
+#overlay {
+    background: rgba(0, 0, 0, .9);
+    color: #fff;
+    margin-top: 150px;
+    padding: 20px;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    z-index: 2000;
+}
+ 
+#overlay h2 {
+    font: 200 4em/1.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+ 
+#overlay p {
+    font: 100 1.2em/1.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+	iframe {
+vertical-align: top;
+}
+ 
+#canvas_holder{
+position: fixed;
+top: 0px;
+left: 0px;
+width:100%;
+height:100%;
+z-index: 0;
+}
+ 
+#map_canvas{
+width:100%;
+height:100%;
+position: "absolute";
+top: 0px;
+left: 0px;
+overflow: "hidden";
+}
+ 
+#holder{
+width: 300px;
+background: rgba(0,0,0,0.8);
+z-index: 2000;
+position: absolute;
+color: white;
+padding: 10px;
+border-radius: 10px;
+-moz-border-radius: 10px;
+-o-border-radius: 10px;
+-webkit-border-radius: 10px;
+-ms-border-radius: 10px;
+}
+ 
+a{
+color: white;
+}
