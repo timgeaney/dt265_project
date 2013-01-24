@@ -1,9 +1,19 @@
  
-<div class="center hero-unit">
-  <h1>ZupBaby!</h1>
 
   <% if signed_in? %>
-  <div class="row">
+
+    <div id="holder">
+      <a href="#" id="zi">Zoom In</a>
+      <a href="#" id="zo">Zoom Out</a>
+      <a href="#" id="gt">GoTo</a>
+    </div>
+     
+    <!--Google Maps APIv3 Background-->
+    <div id="canvas_holder">
+    <div id="map_canvas"></div>
+    </div><!-- End Google Maps Background -->
+
+  <div id="overlay">
     <aside class="span4">
       <section>
         <%= render 'shared/user_info' %>
@@ -12,14 +22,14 @@
         <%= link_to "Register Your Event", register_event_path, 
                                 class: "btn btn-large btn-primary" %>
       </section>
+      <section>
+       <h3>Your Up comming Events</h3>
+      <%= render 'shared/feed' %>
+    </section>
     </aside>
   </div>  
   
-  <div class="span8">
-      <h3>Your Up comming Events</h3>
-      <%= render 'shared/feed' %>
-    </div>
-  </div>
+  
 
  <% else %>
   <div class="center hero-unit">
