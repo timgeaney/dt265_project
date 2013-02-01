@@ -11,7 +11,7 @@
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :title, :date, :description, :contact_phone,  :address, :country, :latitude, :longitude, :url
+  attr_accessible :title, :date, :description, :contact_phone,  :address, :country, :latitude, :longitude, :url, :locality
   belongs_to :user
   has_many :registrations
   has_many :attendees, :through => :registrations, :source => :user
@@ -21,13 +21,13 @@ class Event < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 50}
-  #validates :date, presence: true
+  validates :date, presence: true
   validates :description, presence: true, length: { maximum: 140}
   validates :contact_phone, presence: true
-  validates :address, presence: true, length: { maximum: 50}
+  validates :address, presence: true, length: { maximum: 150}
   validates :country, presence: true, length: { maximum: 50}
-  #validates :latitude, presence: true 
-  #validates :longitude, presence: true
+  validates :latitude, presence: true 
+  validates :longitude, presence: true
   #validates :url, presence: true
   
 

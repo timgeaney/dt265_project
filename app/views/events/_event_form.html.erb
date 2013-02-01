@@ -1,7 +1,9 @@
 
 
-<div class="row">
-  <div class="span6 offset3">
+    
+
+<div class = 'input'>
+  <div class="span6 offset2">
     <%= form_for(@event) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
 
@@ -20,14 +22,17 @@
       <%= f.label :address %>
       <%= f.text_field :address %>
 
+      <%= f.label :locality %>
+      <%= f.text_field :locality %>
+
       <%= f.label :country %>
       <%= f.text_field :country %>
 
-      <%= f.label :latitude %>
-      <%= f.text_field :latitude %>
+ 
+      <%= f.hidden_field :latitude %>
 
-      <%= f.label :longitude %>
-      <%= f.text_field :longitude %>
+     
+      <%= f.hidden_field :longitude %>
 
       <%= f.label :url %>
       <%= f.text_field :url %>      
@@ -38,4 +43,8 @@
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
+
+
+<div id = "map"></div>
+<div id="legend">You can drag and drop the marker to the correct location</div>
 </div>

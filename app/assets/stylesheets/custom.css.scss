@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 20px;
 }
 
 section {
@@ -151,10 +151,10 @@ aside {
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+  border: 2px solid #bbb;
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   @include box_sizing;
 }
 
