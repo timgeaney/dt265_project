@@ -11,30 +11,33 @@
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :title, :date, :description, :contact_phone,  :address, :country, :latitude, :longitude, :url, :locality
+  searchable do
+  text :title, :boost =>2
+  text :category, :boost =>5
+  text :description
+  text :locality
+  text :country
+  end
+
+  attr_accessible :title, :date, :description, :contact_phone,  :address, :country, 
+  :latitude, :longitude, :url, :locality, :photo, :category
   belongs_to :user
   has_many :registrations
   has_many :attendees, :through => :registrations, :source => :user
   has_and_belongs_to_many :categories
-  
+  has_attached_file :photo
 
 
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 50}
-  validates :date, presence: true
+  #validates :date, presence: true
   validates :description, presence: true, length: { maximum: 140}
-  validates :contact_phone, presence: true
-  validates :address, presence: true, length: { maximum: 150}
+  #validates :address, presence: true, length: { maximum: 150}
   validates :country, presence: true, length: { maximum: 50}
   validates :latitude, presence: true 
   validates :longitude, presence: true
   #validates :url, presence: true
   
-
-
-
-
-
 
 	def attending?(event)
     event_users.find_by_host_id(event.id)

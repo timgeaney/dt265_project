@@ -8,7 +8,7 @@ namespace :db do
                  password_confirmation: "foobar")
     admin.toggle!(:admin)
     #create 35 users
-    35.times do |n|
+    10.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@dt265project.org"
       password  = "password"
@@ -25,37 +25,90 @@ namespace :db do
         users.each {|user| user.microposts.create!(content: content)}
     end
 
-    #  #create 10 number events
-    #  35.times do 
-    #    title = ["Whats on in the cinema", "Leinster V's Munster", "Formula 1", "Tommy Tiernan", 
-    #     "the Rolling stones", "Meath V's Dublin", "Caravagio at Art Museum", 
-    #     "Debussy at National Concert Hall", "The Sopranoes"].sample
-    #   #date = [12/12/2013]
-    #   description = Faker::Lorem.sentence(5)
-    #   contact_phone = ["555-555-555"]
-    #   address = ["dublin", "cork", "london", "paris", "berlin", "amsterdam"].sample
-    #   country = ["ireland", "england", "wales", "france", "holland"].sample
-    #   url = ["www.google.com"]
-      
-    #   location = ["london", "cork", "dublin", "amsterdam"].sample
-    #   users.each { |user| User.events.create!(title: title,
-    #                #date: date,
-    #                description: description,
-    #                contact_phone: contact_phone,
-    #                address: address,
-    #                country: country,
-    #                url: url
-                   
-    #                )}
-    # end
-
-    #create categories
-    #category = ["sport", "cinema", "drama", "comedy", "art", "music", "Tv", "Science"]
-    #category.each {|category| Category.create(name: category)}
+     #create 10 number events
+     
 
 
 
+     users.each { |user| user.events.create!(title: "six nations" , category: "Rugby", 
+          description: "ireland at home take on scotland",locality: "dublin",
+          country: "Ireland", url: "http://www.ercrugby.com/",
+          latitude: 63.5,
+          longitude: -6.83    
+                   )}
+    users.each { |user| user.events.create!(title: "world cup" , category: "Rugby", 
+          description: "Ireland take on australia",locality: "melbourne",
+          country: "australia", url: "http://www.ercrugby.com/",
+          latitude: 63.5,
+          longitude: -6.83    
+                   )}
+
+    users.each { |user| user.events.create!(title: "Heineken Cup" , category: "Rugby", 
+          description: "leinster V munster",locality: "cardiff",
+          country: "wales", url: "http://www.ercrugby.com/",
+          latitude: 63.5,
+          longitude: -6.83    
+                   )}
+    users.each { |user| user.events.create!(title: "rugby world cup" , category: "Rugby", 
+          description: "Ireland V's All blacks",locality: "cape town",
+          country: "south africa", url: "http://www.ercrugby.com/",
+          latitude: 63.5,
+          longitude: -6.83    
+                   )}
+
+     users.each { |user| user.events.create!(title: "six nations" , category: "Rugby", 
+          description: "wales at home take on scotland",locality: "edinburgh",
+          country: "scotland", url: "http://www.ercrugby.com/",
+          latitude: 63.5,
+          longitude: -6.83    
+                   )}
+    users.each { |user| user.events.create!(title: "world cup" , category: "Rugby", 
+          description: "South afdrica take on australia",locality: "cape town",
+          country: "south africa", url: "http://www.ercrugby.com/",
+          latitude: 63.5,
+          longitude: -6.83    
+                   )}
+
+    users.each { |user| user.events.create!(title: "Heineken Cup" , category: "Rugby", 
+          description: " munster V toulouse",locality: "toulouse",
+          country: "france", url: "http://www.ercrugby.com/",
+          latitude: 63.5,
+          longitude: -6.83    
+                   )}
+    users.each { |user| user.events.create!(title: "rugby world cup" , category: "Rugby", 
+          description: "france V's All blacks",locality: "wellington",
+          country: "New Zealand", url: "http://www.ercrugby.com/",
+          latitude: 63.5,
+          longitude: -6.83    
+                   )}
 
 
-  end
+
+
+
+
+
+
+
+
+
+
+      users.each { |user| user.events.create!(title: "Formula 1", category: "Sport", 
+          description: "melbourne",locality: "melbourne",
+          country: "australia", url: "http://www.ercrugby.com/",
+          latitude: 63.5,
+          longitude: -6.83    
+                   )}
+
+       users.each { |user| user.events.create!(title: "The sopranoes", category: "TV", 
+          description: "gansters",locality: "new york",
+          country: "USA", url: "http://www.ercrugby.com/",
+          latitude: 63.5,
+          longitude: -6.83    
+                   )}
+
+         
+  
+
+   end
 end

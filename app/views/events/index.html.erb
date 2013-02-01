@@ -1,7 +1,21 @@
+<div id='search'>
+<%= form_tag events_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+</div>
+
+
+
+
 <% provide(:title, 'All events') %>
 <h1>All events</h1>
 
 <%= will_paginate @events %>
+
+
 
 <ul class = "users">
   <% @events.each do |event| %>

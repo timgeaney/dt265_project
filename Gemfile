@@ -6,6 +6,10 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
+gem 'paperclip', '~> 3.0'
+gem 'sunspot_rails'
+#gem 'cocaine', '~>0.4.0'
+#gem 'carrierwave'
 
 
 # Bundle edge Rails instead:
@@ -15,6 +19,7 @@ group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
   gem 'annotate', '2.5.0'
+  gem 'sunspot_solr'
 end
 
 
