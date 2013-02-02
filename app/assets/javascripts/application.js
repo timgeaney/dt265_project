@@ -117,26 +117,98 @@
       // });
       
 			
-		
-
+	
+//google maps for home page
 
    function initialize()
             {
-            var mapProp = {
-              center:new google.maps.LatLng(52.6742,-8.6424),
-              zoom:18,
-              mapTypeId:google.maps.MapTypeId.HYBRID
-              };
-            var map=new google.maps.Map(document.getElementById("map_canvas")
-              ,mapProp);
+
+          
+
+            var myOptions = {
+                zoom: 3,
+
+                zoomControl: true,
+                zoomControlOptions: {
+                    style: google.maps.ZoomControlStyle.MEDIUM,
+                    position: google.maps.ControlPosition.RIGHT_CENTER
+                },
+
+                scaleControl: true,
+                panControl: true,
+                navigationControl: false,              
+                mapTypeId:google.maps.MapTypeId.HYBRID,
+                streetViewControl: false,
+                center: new google.maps.LatLng(52.6742,-8.6424)
             }
+
+            var map = new google.maps.Map(document.getElementById("map_canvas")
+              ,myOptions);
+
+            $("#zo").click(function(event){
+              event.preventDefault();
+              map.setZoom( map.getZoom()-1 );
+              //map.setCenter(new google.maps.LatLng(9.825183,15.1975769));
+              });
+               
+              $("#zi").click(function(event){
+              event.preventDefault();
+              map.setZoom( map.getZoom()+1 );
+              });
+               
+              $("#gt").click(function(event){
+              event.preventDefault();
+              var lt1 = new google.maps.LatLng(53.3428, -6.2661);
+              map.setZoom( 16 );
+              map.panTo(lt1);
+              });
+
+
+            var json = [
+          {"id":101,"latitude":48.85465,"longitude":2.76,"locality":"Mont\u00e9vrain","date":"2013-02-08","url":""},
+          {"id":100,"latitude":53.12,"longitude":-6.453,"locality":"new york","date":null,"url":"http://www.ercrugby.com/"},
+          {"id":90,"latitude":63.5,"longitude":-6.83,"locality":"melbourne","date":null,"url":"http://www.ercrugby.com/"},
+          {"id":80,"latitude":52.8,"longitude":-8.83,"locality":"wellington","date":null,"url":"http://www.ercrugby.com/"},
+          {"id":70,"latitude":53.8,"longitude":-6.83,"locality":"toulouse","date":null,"url":"http://www.ercrugby.com/"}
+
+          ] 
+    
+
+          var infoWindow = new google.maps.InfoWindow();
+
+          for (var i = 0, length = json.length; i < length; i++) {
+              var data = json[i],
+                latLng = new google.maps.LatLng(data.latitude, data.longitude); 
+
+          // Creating a marker and putting it on the map
+          var marker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            title: data.title
+          });
+        
+
+          (function(marker, data) {
+
+            // Attaching a click event to the current marker
+            google.maps.event.addListener(marker, "click", function(e) {
+              infoWindow.setContent(data.locality);
+              infoWindow.open(map, marker);
+            });
+
+          })(marker, data);
+        }
+
+      }
+
+      
       
       
     
     google.maps.event.addDomListener(window, 'load', initialize);
 
 
-
+//datepicker js for event form
 
    $(function(){
         $("#event_date").datepicker({dateFormat: "dd/mm/yy"});
@@ -159,7 +231,7 @@
 
       });     
 
-
+//drop down list  for categories on event form
       $(function() {
         var availableTags = [
         "sport",
@@ -174,3 +246,11 @@
         source: availableTags
         });
         });
+
+
+
+//add markers to home page map
+
+  
+
+    
