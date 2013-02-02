@@ -26,6 +26,9 @@ namespace :db do
     end
 
      #create 10 number events
+     def rand_time(from, to=Time.now)
+        Time.at(rand_in_range(from.to_f, to.to_f))
+      end
      
 
 
@@ -34,63 +37,56 @@ namespace :db do
           description: "ireland at home take on scotland",locality: "dublin",
           country: "Ireland", url: "http://www.ercrugby.com/",
           latitude: 63.5,
-          longitude: -6.83    
+          longitude: -6.83
+          
+
+
                    )}
     users.each { |user| user.events.create!(title: "world cup" , category: "Rugby", 
           description: "Ireland take on australia",locality: "melbourne",
           country: "australia", url: "http://www.ercrugby.com/",
-          latitude: 63.5,
-          longitude: -6.83    
+          latitude: 53.36,
+          longitude: -6.25    
                    )}
 
     users.each { |user| user.events.create!(title: "Heineken Cup" , category: "Rugby", 
           description: "leinster V munster",locality: "cardiff",
           country: "wales", url: "http://www.ercrugby.com/",
-          latitude: 63.5,
-          longitude: -6.83    
+          latitude: 52.67,
+          longitude: -8.63    
                    )}
     users.each { |user| user.events.create!(title: "rugby world cup" , category: "Rugby", 
           description: "Ireland V's All blacks",locality: "cape town",
           country: "south africa", url: "http://www.ercrugby.com/",
-          latitude: 63.5,
+          latitude: 53.5,
           longitude: -6.83    
                    )}
 
      users.each { |user| user.events.create!(title: "six nations" , category: "Rugby", 
           description: "wales at home take on scotland",locality: "edinburgh",
           country: "scotland", url: "http://www.ercrugby.com/",
-          latitude: 63.5,
+          latitude: 52.5,
           longitude: -6.83    
                    )}
     users.each { |user| user.events.create!(title: "world cup" , category: "Rugby", 
           description: "South afdrica take on australia",locality: "cape town",
           country: "south africa", url: "http://www.ercrugby.com/",
           latitude: 63.5,
-          longitude: -6.83    
+          longitude: -8.83    
                    )}
 
     users.each { |user| user.events.create!(title: "Heineken Cup" , category: "Rugby", 
           description: " munster V toulouse",locality: "toulouse",
           country: "france", url: "http://www.ercrugby.com/",
-          latitude: 63.5,
+          latitude: 53.8,
           longitude: -6.83    
                    )}
     users.each { |user| user.events.create!(title: "rugby world cup" , category: "Rugby", 
           description: "france V's All blacks",locality: "wellington",
           country: "New Zealand", url: "http://www.ercrugby.com/",
-          latitude: 63.5,
-          longitude: -6.83    
+          latitude: 52.8,
+          longitude: -8.83    
                    )}
-
-
-
-
-
-
-
-
-
-
 
 
       users.each { |user| user.events.create!(title: "Formula 1", category: "Sport", 
@@ -103,8 +99,8 @@ namespace :db do
        users.each { |user| user.events.create!(title: "The sopranoes", category: "TV", 
           description: "gansters",locality: "new york",
           country: "USA", url: "http://www.ercrugby.com/",
-          latitude: 63.5,
-          longitude: -6.83    
+          latitude: 53.12,
+          longitude: -6.453    
                    )}
 
          

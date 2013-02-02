@@ -158,3 +158,19 @@
       addresspickerMap.addresspicker( "updatePosition");
 
       });     
+
+
+      $(function() {
+        var availableTags = [
+        "sport",
+        "music",
+        "comedy",
+        "people",
+        "tv",
+        "entertainment",
+       
+        ];
+        $( "#event_category" ).autocomplete({
+        source: availableTags
+        });
+        });
