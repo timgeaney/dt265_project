@@ -120,6 +120,14 @@
 	
 //google maps for home page
 
+var map;
+
+function setLatLng(lat, lng) {
+  var lt1 = new google.maps.LatLng(lat, lng);
+              map.setZoom( 16 );
+              map.panTo(lt1);  
+}
+
    function initialize()
             {
 
@@ -142,7 +150,7 @@
                 center: new google.maps.LatLng(52.6742,-8.6424)
             }
 
-            var map = new google.maps.Map(document.getElementById("map_canvas")
+            map = new google.maps.Map(document.getElementById("map_canvas")
               ,myOptions);
 
             $("#zo").click(function(event){
@@ -164,14 +172,7 @@
               });
 
 
-            var json = [
-          {"id":101,"latitude":48.85465,"longitude":2.76,"locality":"Mont\u00e9vrain","date":"2013-02-08","url":""},
-          {"id":100,"latitude":53.12,"longitude":-6.453,"locality":"new york","date":null,"url":"http://www.ercrugby.com/"},
-          {"id":90,"latitude":63.5,"longitude":-6.83,"locality":"melbourne","date":null,"url":"http://www.ercrugby.com/"},
-          {"id":80,"latitude":52.8,"longitude":-8.83,"locality":"wellington","date":null,"url":"http://www.ercrugby.com/"},
-          {"id":70,"latitude":53.8,"longitude":-6.83,"locality":"toulouse","date":null,"url":"http://www.ercrugby.com/"}
-
-          ] 
+            var json = jsonArr;
     
 
           var infoWindow = new google.maps.InfoWindow();

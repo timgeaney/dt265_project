@@ -3,6 +3,18 @@
 <% provide(:title, @event.title) %>
 
 
+<script type = "text/javascript">
+
+var eventYear = <%= @event.date.year %>;
+var eventMonth = <%= @event.date.mon %>;
+var eventDay = <%= @event.date.mday %>;
+
+
+
+
+
+</script>
+
 <div id="container">
 
     <h1><%= @event.title %></h1>
