@@ -8,8 +8,8 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'paperclip', '~> 3.0'
 gem 'sunspot_rails'
-#gem 'cocaine', '~>0.4.0'
-#gem 'carrierwave'
+gem 'gmaps4rails'
+
 
 
 # Bundle edge Rails instead:

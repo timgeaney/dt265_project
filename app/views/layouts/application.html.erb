@@ -19,14 +19,16 @@
          "latitude" : <%= event.latitude %>,
          "longitude" : <%= event.longitude %>,
          "category" : "<%= event.category %>",
-         "locality" : "<%= event.locality %>"
+         "locality" : "<%= event.locality %>",
+         "title" : "<%= event.title %>",
+         "photo_file_name" : "<%= event.photo_file_name %>"
        });
 
-  // <% end %>
-  // console.log(jsonArr[45].latitude);
+   <% end %>
+   console.log(jsonArr[45].latitude);
    </script>
       
- -->
+
   </head>
   <body>
     <%= render 'layouts/header' %>
@@ -36,6 +38,7 @@
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
       <%= yield %>
+      <%= yield :scripts %>
 
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>

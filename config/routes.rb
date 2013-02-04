@@ -3,9 +3,15 @@ Dt265Project::Application.routes.draw do
   root to: 'static_pages#home'
 
   resources :events
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 
    match '/register_event',    to: 'events#new'
  # match '/update_event',    to: 'events#edit'

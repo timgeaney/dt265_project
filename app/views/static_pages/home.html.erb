@@ -16,9 +16,12 @@
     </div><!-- End Google Maps Background -->
 
   <div id="overlay">
-    <aside class="span4">
+    <aside>
       <section>
         <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
       </section>
       <section>
         <%= link_to "Register Your Event", register_event_path, 

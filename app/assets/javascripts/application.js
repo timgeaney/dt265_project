@@ -181,6 +181,7 @@ function setLatLng(lat, lng) {
               var data = json[i],
                 latLng = new google.maps.LatLng(data.latitude, data.longitude); 
 
+
           // Creating a marker and putting it on the map
           var marker = new google.maps.Marker({
             position: latLng,
@@ -188,12 +189,13 @@ function setLatLng(lat, lng) {
             title: data.title
           });
         
+          
 
           (function(marker, data) {
 
             // Attaching a click event to the current marker
             google.maps.event.addListener(marker, "click", function(e) {
-              infoWindow.setContent(data.locality);
+              infoWindow.setContent(data.title);
               infoWindow.open(map, marker);
             });
 
@@ -250,8 +252,3 @@ function setLatLng(lat, lng) {
 
 
 
-//add markers to home page map
-
-  
-
-    

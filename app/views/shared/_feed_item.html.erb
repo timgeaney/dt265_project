@@ -1,17 +1,20 @@
 <li id="<%= feed_item.id %>">
-  <%= link_to gravatar_for(feed_item.user), feed_item.user %>
+<a href="<%= event_path(current_user) %>">
+   <%= image_tag feed_item.photo.url.to_s, :size => "100x60" %>
+</a>
     <span class="user">
-       <%= link_to feed_item.user.name, feed_item.title %>
-    <%=   feed_item.latitude %>
-    <%=   feed_item.longitude %>
-
+       <%= link_to feed_item.user.name, feed_item.user %>
+  
 
     </span>
     <span class="content"><%= feed_item.title %></span>
+    <span class="content"><%= feed_item.locality %></span>
+    
+
     <span class="timestamp">
-      Added <%= time_ago_in_words(feed_item.created_at) %> ago.
+      Event Date <%= feed_item.date %> 
     </span>
-  <% if current_user?(feed_item.user) %>
+
     <%= link_to "delete", feed_item, method: :delete,
                                       
                                      data: { confirm: "You sure?" },
@@ -22,7 +25,7 @@
   </a>
 
 
-  <% end %>
+  
 
 
 

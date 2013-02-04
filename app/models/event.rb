@@ -20,10 +20,10 @@ class Event < ActiveRecord::Base
   end
 
   attr_accessible :title, :date, :description, :contact_phone,  :address, :country, 
-  :latitude, :longitude, :url, :locality, :photo, :category
+  :latitude, :longitude, :url, :locality, :photo, :category, :event_id
   belongs_to :user
-  has_many :registrations
-  has_many :attendees, :through => :registrations, :source => :user
+  has_many :rsvps
+  has_many :attendees, :through => :rsvps, :source => :user
   has_and_belongs_to_many :categories
   has_attached_file :photo
 
@@ -37,6 +37,15 @@ class Event < ActiveRecord::Base
   validates :latitude, presence: true 
   validates :longitude, presence: true
   #validates :url, presence: true
+
+  default_scope order: 'events.created_at DESC'
+  
+  def self.from_users_followed_by(user)
+    followed_user_ids = "SELECT followed_id FROM relationships
+                         WHERE follower_id = :user_id"
+    where("user_id IN (#{followed_user_ids}) OR user_id = :user_id", 
+          user_id: user.id)
+  end
   
 
 	def attending?(event)
