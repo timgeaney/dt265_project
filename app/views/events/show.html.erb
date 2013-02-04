@@ -5,41 +5,36 @@
 
 <script type = "text/javascript">
 
-var eventYear = <%= @event.date.year %>;
-var eventMonth = <%= @event.date.mon %>;
-var eventDay = <%= @event.date.mday %>;
+eventYear = <%= @event.date.year %>;
+eventMonth = <%= @event.date.mon %>;
+eventDay = <%= @event.date.mday %>;
+
 
 </script>
 
 <div id="container">
 
     <h1><%= @event.title %></h1>
-    
+  <div><p id="note"></p></div>  
 <div id="countdown"></div>
-<p id="note"></p>
+
 <div class="row">
 
-    <div>
-      <h1>
-        
-      </h1>
-    </div> 
+   
   <div id = "photo">
     <%= image_tag @event.photo.url.to_s %>
   </div>
 
   <div >
-    <ul class = "table">
+    <ul>
     <p>
         <h3>
           <li>Date: <%= @event.date %></li>
           <li>Description: <%= @event.description %></li>
           <li>Contact Phone: <%= @event.contact_phone %></li>
-          <li>Address: <%= @event.address %></li>
+          <li>Address: <%= @event.locality %></li>
           <li>Country: <%= @event.country %></li>
-          <li>Latitude: <%= @event.latitude %></li>
-          <li>Longitude: <%= @event.longitude %></li>
-          <li>Website: <%= link_to @event.url %></li>
+          <li>Website: <%= @event.url %></li>
         </h3>
       </p>
 

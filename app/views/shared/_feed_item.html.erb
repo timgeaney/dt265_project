@@ -1,5 +1,5 @@
 <li id="<%= feed_item.id %>">
-<a href="<%= event_path(current_user) %>">
+<a href="/events/<%= feed_item.id %>">
    <%= image_tag feed_item.photo.url.to_s, :size => "100x60" %>
 </a>
     <span class="user">

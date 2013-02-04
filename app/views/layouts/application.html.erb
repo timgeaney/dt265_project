@@ -12,6 +12,8 @@
    
     <script type="text/javascript">
    
+    var eventYear, eventMonth, eventDay;
+
     var jsonArr = [];
     <% Event.all.each do |event| %>
        jsonArr.push({ 
@@ -21,11 +23,11 @@
          "category" : "<%= event.category %>",
          "locality" : "<%= event.locality %>",
          "title" : "<%= event.title %>",
-         "photo_file_name" : "<%= event.photo_file_name %>"
+         "photo_file_name" : "<%= event.photo.url.to_s %>"
        });
 
    <% end %>
-   console.log(jsonArr[45].latitude);
+   
    </script>
       
 

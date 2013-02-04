@@ -85,7 +85,7 @@ end
                           category: "Rugby", 
                           description: "France V Wales",
                           locality: "paris",
-                          country: "France", url: "<a href: http://www.ercrugby.com/>rugby world cup</a>",
+                          country: "France", url: "http://www.ercrugby.com",
                           date: "2013-03-09",
                           latitude: 48.9244,
                           longitude: 2.3600
@@ -95,8 +95,8 @@ end
                           category: "Rugby", 
                           description: "Ireland V England",
                           locality: "dublin",
-                          country: "ireland", url: "<a href: http://www.ercrugby.com/>rugby world cup</a>",
-                          date: "2013-03-09",
+                          country: "ireland", url: "http://www.ercrugby.com",
+                          date: "2013-03-10",
                           latitude: 52.3351,
                           longitude: -6.2283
                    )
@@ -107,8 +107,8 @@ end
                           category: "Rugby", 
                           description: "scotland V Wales",
                           locality: "murrayfield",
-                          country: "scotland", url: "<a href: http://www.ercrugby.com/>rugby world cup</a>",
-                          date: "2013-03-013",
+                          country: "scotland", url: "http://www.ercrugby.com",
+                          date: "2013-03-011",
                           latitude: 55.9422,
                           longitude: -3.2409
                    )
@@ -116,7 +116,7 @@ end
                           category: "Rugby", 
                           description: "italy V ireland",
                           locality: "stadio olimpico",
-                          country: "italy", url: "<a href: http://www.ercrugby.com/>rugby world cup</a>",
+                          country: "italy", url: "http://www.ercrugby.com",
                           date: "2013-03-16",
                           latitude: 41.9339,
                           longitude: 12.4548
@@ -126,8 +126,8 @@ end
                           category: "music", 
                           description: "U2360 TOUR",
                           locality: "Cape Town",
-                          country: "SOUTH AFRICA", url: "<a href: http://www.ercrugby.com/>rugby world cup</a>",
-                          date: "2013-02-18",
+                          country: "SOUTH AFRICA", url: "http://www.u2.com/tour",
+                          date: "2013-02-11",
                           latitude: -33.9053,
                           longitude: 18.4086
                    )
@@ -138,8 +138,8 @@ end
                           category: "music", 
                           description: "U2360 TOUR",
                           locality: "Buenos Aires",
-                          country: "brazil", url: "<a href: http://www.ercrugby.com/>rugby world cup</a>",
-                          date: "2013-03-28",
+                          country: "brazil", url: "http://www.u2.com/tour",
+                          date: "2013-03-7",
                           latitude: -34.9137,
                           longitude: -57.9890
                    )
@@ -148,8 +148,8 @@ end
                           category: "music", 
                           description: "U2360 TOUR",
                           locality: "mexico",
-                          country: "mexico", url: "<a href: http://www.ercrugby.com/>rugby world cup</a>",
-                          date: "2013-03-28",
+                          country: "mexico", url: "http://www.u2.com/tour",
+                          date: "2013-03-8",
                           latitude: 19.1300,
                           longitude: -99.400
                    )
@@ -158,8 +158,8 @@ end
                           category: "sport", 
                           description: "albert park",
                           locality: "melbourne",
-                          country: "australia", url: "<a href: http://www.ercrugby.com/>rugby world cup</a>",
-                          date: "2013-03-15",
+                          country: "australia", url: "http://www.formula1.com",
+                          date: "2013-03-11",
                           latitude: -37.8420,
                           longitude: 144.9500
                    )
@@ -168,7 +168,7 @@ end
                           category: "sport", 
                           description: "Sepang International Circuit",
                           locality: "malaysia",
-                          country: "malaysia", url: "<a href: http://www.ercrugby.com/>rugby world cup</a>",
+                          country: "malaysia", url: "http://www.formula1.com",
                           date: "2013-04-14",
                           latitude: 2.7608,
                           longitude: 101.7383
@@ -178,7 +178,7 @@ end
                           category: "sport", 
                           description: "Circuit de Catalunya",
                           locality: "spain",
-                          country: "spain", url: "<a href: http://www.ercrugby.com/>rugby world cup</a>",
+                          country: "spain",  url: "http://www.formula1.com",
                           date: "2013-04-28",
                           latitude: 41.5700,
                           longitude: 2.2611
@@ -189,7 +189,7 @@ end
                           category: "sport", 
                           description: "Circuit de Catalunya",
                           locality: "MONACO",
-                          country: "spain", url: "<a href: http://www.ercrugby.com/>rugby world cup</a>",
+                          country: "spain",  url: "http://www.formula1.com",
                           date: "2013-05-14",
                           latitude: 43.7347,
                           longitude: 7.4206
@@ -200,7 +200,7 @@ end
                           category: "sport", 
                           description: "Circuit de Catalunya",
                           locality: "germany",
-                          country: "germany", url: "<a href: http://www.ercrugby.com/>rugby world cup</a>",
+                          country: "germany",  url: "http://www.formula1.com",
                           date: "2013-05-7",
                           latitude: 50.3356,
                           longitude: 6.9475

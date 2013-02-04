@@ -120,6 +120,7 @@
 	
 //google maps for home page
 
+
 var map;
 
 function setLatLng(lat, lng) {
@@ -128,10 +129,12 @@ function setLatLng(lat, lng) {
               map.panTo(lt1);  
 }
 
+
    function initialize()
             {
 
-          
+            
+
 
             var myOptions = {
                 zoom: 3,
@@ -166,13 +169,15 @@ function setLatLng(lat, lng) {
                
               $("#gt").click(function(event){
               event.preventDefault();
-              var lt1 = new google.maps.LatLng(53.3428, -6.2661);
-              map.setZoom( 16 );
+              var lt1 = new google.maps.LatLng(52.6742,-8.6424);
+              map.setZoom( 3 );
               map.panTo(lt1);
               });
 
 
             var json = jsonArr;
+
+          
     
 
           var infoWindow = new google.maps.InfoWindow();
@@ -180,22 +185,26 @@ function setLatLng(lat, lng) {
           for (var i = 0, length = json.length; i < length; i++) {
               var data = json[i],
                 latLng = new google.maps.LatLng(data.latitude, data.longitude); 
-
+                 
 
           // Creating a marker and putting it on the map
           var marker = new google.maps.Marker({
             position: latLng,
             map: map,
-            title: data.title
+            title: data.title,
+           
           });
         
           
 
           (function(marker, data) {
 
+
             // Attaching a click event to the current marker
             google.maps.event.addListener(marker, "click", function(e) {
-              infoWindow.setContent(data.title);
+              var content = data.title+"<br /><a href = '/events/ "+ data.id+"'><img src= '"+data.photo_file_name+"' /></a>" ;
+
+              infoWindow.setContent(content);
               infoWindow.open(map, marker);
             });
 
@@ -211,7 +220,7 @@ function setLatLng(lat, lng) {
     google.maps.event.addDomListener(window, 'load', initialize);
 
 
-//datepicker js for event form
+//addresspicker js for event form
 
    $(function(){
         $("#event_date").datepicker({dateFormat: "dd/mm/yy"});

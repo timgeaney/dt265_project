@@ -7,10 +7,10 @@
     <div class="container">
       
             <%= form_tag events_path, :method => :get do %>
-              <div style = "position:fixed;top:0px; left:400px;width:400px;">
+              <div style = "position:fixed;top:0px; left:200px;width:300px;">
               <%= text_field_tag :search, params[:search] %>
             </div>
-              <div style = "position:fixed; top:10px; left:200px;padding-bottom:5px;">
+              <div style = "position:fixed; top:10px; left:20px;padding-bottom:5px;">
               <%= submit_tag "Search for Event", :name => nil, class: "btn btn-info" %>
               </div>
               <% end %>
