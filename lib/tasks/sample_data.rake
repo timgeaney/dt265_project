@@ -1,9 +1,9 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    make_users
+    #make_users
     #make_relationships
-    make_events
+    #make_events
    end
 end
     #create admin user account
