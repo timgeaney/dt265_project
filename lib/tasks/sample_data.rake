@@ -88,7 +88,8 @@ end
                           country: "France", url: "http://www.ercrugby.com",
                           date: "2013-03-09",
                           latitude: 48.9244,
-                          longitude: 2.3600
+                          longitude: 2.3600,
+                          photo_file_name: "formula1.jpeg"
                    )
 
     user3.events.create!( title: "six nations" , 
@@ -98,7 +99,8 @@ end
                           country: "ireland", url: "http://www.ercrugby.com",
                           date: "2013-03-10",
                           latitude: 52.3351,
-                          longitude: -6.2283
+                          longitude: -6.2283,
+                           photo_file_name: "formula1.jpeg"
                    )
 
    
@@ -108,9 +110,10 @@ end
                           description: "scotland V Wales",
                           locality: "murrayfield",
                           country: "scotland", url: "http://www.ercrugby.com",
-                          date: "2013-03-011",
+                          date: "2013-03-11",
                           latitude: 55.9422,
-                          longitude: -3.2409
+                          longitude: -3.2409,
+                           photo_file_name: "formula1.jpeg"
                    )
     user3.events.create!( title: "six nations" , 
                           category: "Rugby", 

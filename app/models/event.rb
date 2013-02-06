@@ -20,7 +20,7 @@ class Event < ActiveRecord::Base
   end
 
   attr_accessible :title, :date, :description, :contact_phone,  :address, :country, 
-  :latitude, :longitude, :url, :locality, :photo, :category, :event_id
+  :latitude, :longitude, :url, :locality, :photo, :category, :event_id, :photo_file_name
   belongs_to :user
   has_many :rsvps
   has_many :attendees, :through => :rsvps, :source => :user
