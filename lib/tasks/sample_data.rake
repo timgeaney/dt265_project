@@ -1,9 +1,9 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    #make_users
+    make_users
     #make_relationships
-    #make_events
+    make_events
    end
 end
     #create admin user account
@@ -88,8 +88,8 @@ end
                           country: "France", url: "http://www.ercrugby.com",
                           date: "2013-03-09",
                           latitude: 48.9244,
-                          longitude: 2.3600,
-                          photo_file_name: "formula1.jpeg"
+                          longitude: 2.3600
+                          
                    )
 
     user3.events.create!( title: "six nations" , 
@@ -99,8 +99,8 @@ end
                           country: "ireland", url: "http://www.ercrugby.com",
                           date: "2013-03-10",
                           latitude: 52.3351,
-                          longitude: -6.2283,
-                           photo_file_name: "formula1.jpeg"
+                          longitude: -6.2283
+                          
                    )
 
    
@@ -112,8 +112,8 @@ end
                           country: "scotland", url: "http://www.ercrugby.com",
                           date: "2013-03-11",
                           latitude: 55.9422,
-                          longitude: -3.2409,
-                           photo_file_name: "formula1.jpeg"
+                          longitude: -3.2409
+                          
                    )
     user3.events.create!( title: "six nations" , 
                           category: "Rugby", 

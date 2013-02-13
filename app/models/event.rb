@@ -11,13 +11,13 @@
 #
 
 class Event < ActiveRecord::Base
-  searchable do
-  text :title, :boost =>2
-  text :category, :boost =>5
-  text :description
-  text :locality
-  text :country
-  end
+  # searchable do
+  # text :title, :boost =>2
+  # text :category, :boost =>5
+  # text :description
+  # text :locality
+  # text :country
+  # end
 
   attr_accessible :title, :date, :description, :contact_phone,  :address, :country, 
   :latitude, :longitude, :url, :locality, :photo, :category, :event_id, :photo_file_name

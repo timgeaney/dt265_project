@@ -3,11 +3,11 @@ class EventsController < ApplicationController
   before_filter :correct_user,   only: :destroy
   
   def index
-    @search = Event.search do 
-      fulltext params[:search]   
-    end
-    @events = @search.results
-    #@events = Event.paginate(page: params[:page])
+    # @search = Event.search do 
+    #   fulltext params[:search]   
+    # end
+    # @events = @search.results
+    @events = Event.paginate(page: params[:page])
   end
 
   def new
