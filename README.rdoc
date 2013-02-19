@@ -3,12 +3,18 @@ DT265 PROJECT RAILS APP
 A Ruby on Rails application that allows users to follow promoters of events like concerts, football etc. It also allows users to become their own promoter and have people subscribe to them. It uses the google maps api to highlight locations.
 
 Technologies and Features:
-Javascript: All google maps functionality
-JQuery: Address Picker and Location picker for updating forms
-Ajax: ajax calls for subscribing and unsunbscribing web pages
-Bootstrap CSS:
-JSON: convert longitude and latitude data to JSON and then processed by javascript to display locations from database.
-Database: SQLite3
+Javascript: All google maps functionality, 
+
+JQuery: Address Picker and Location picker for updating forms, 
+
+Ajax: ajax calls for subscribing and unsunbscribing web pages, 
+
+Bootstrap CSS: ,
+
+JSON: convert longitude and latitude data to JSON and then processed by javascript to display locations from database. 
+
+Database: SQLite3 ,
+
 3rd Party: It uses Apache Lucene search engine through the rails solr plugin to index and full text search the database.
 
 Work in Progress
